@@ -1,6 +1,6 @@
-package demoqa.tests;
+package demo.qa.tests;
 
-import demoqa.pages.PracticeFormPage;
+import demo.qa.pages.PracticeFormPage;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,22 +11,22 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
 
 	@Test
 	void fillPracticeForm() {
-		String firstName = "androsor";
-		String lastName = "androsor99";
-		String email = "androsor99@gmail.com";
-		String mobileNumber = "3291406808";
-		String gender = "Male";
-		String hobby = "Sports";
-		String day = "04";
-		String month = "January";
-		String year = "1978";
-		String subject1 = "English";
-		String subject2 = "Physics";
+		var firstName = "androsor";
+		var lastName = "androsor99";
+		var email = "androsor99@gmail.com";
+		var mobileNumber = "3291406808";
+		var gender = "Male";
+		var hobby = "Sports";
+		var day = "04";
+		var month = "January";
+		var year = "1978";
+		var subject1 = "English";
+		var subject2 = "Physics";
+		var currentAddress = "Skrypnikova 21-120";
+		var nameFile = "Img.jpg";
+		var state = "Haryana";
+		var city = "Karnal";
 		List<String> subjects = List.of(subject1, subject2);
-		String currentAddress = "Skrypnikova 21-120";
-		String nameFile = "Img.jpg";
-		String state = "Haryana";
-		String city = "Karnal";
 
 		practiceFormPage
 				.openPage()

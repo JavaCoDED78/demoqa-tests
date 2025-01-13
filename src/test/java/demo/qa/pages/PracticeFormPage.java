@@ -1,8 +1,8 @@
-package demoqa.pages;
+package demo.qa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import demoqa.pages.componets.CalendarComponent;
-import demoqa.pages.componets.RegistrationResultModal;
+import demo.qa.pages.componets.CalendarComponent;
+import demo.qa.pages.componets.RegistrationResultModal;
 
 import java.util.List;
 

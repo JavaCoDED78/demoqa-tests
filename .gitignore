@@ -48,3 +48,5 @@ bin/
 /.idea/vcs.xml
 /.idea/workspace.xml
 /.idea/git_toolbox_prj.xml
+/.idea/csv-editor.xml
+/src/test/resources/commonSitUrlShouldBePresentInResultsOfSearchInGoggleByTextQuery.txt
