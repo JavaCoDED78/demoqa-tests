@@ -3,6 +3,7 @@ package demo.qa.util;
 import net.datafaker.Faker;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
@@ -67,12 +68,10 @@ public final class DataUtils {
 		return SUBJECTS.get(ThreadLocalRandom.current().nextInt(SUBJECTS.size()));
 	}
 
-	public static String generateAnotherSubject(String subject) {
-		String anotherSubject = generateRandomSubject();
-		while (subject.equals(anotherSubject)) {
-			anotherSubject = generateRandomSubject();
-		}
-		return anotherSubject;
+	public static String generateAnotherSubject(String ... subjects) {
+		List<String> availableSubjects = new ArrayList<>(SUBJECTS);
+		availableSubjects.removeAll(Arrays.asList(subjects));
+		return availableSubjects.get(ThreadLocalRandom.current().nextInt(availableSubjects.size()));
 	}
 
 	public static String generateRandomAddress() {
