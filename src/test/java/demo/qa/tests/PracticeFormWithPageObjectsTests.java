@@ -1,6 +1,7 @@
 package demo.qa.tests;
 
 import demo.qa.pages.PracticeFormPage;
+import demo.qa.util.DataUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,22 +12,22 @@ public class PracticeFormWithPageObjectsTests extends TestBase {
 
 	@Test
 	void fillPracticeForm() {
-		var firstName = "androsor";
-		var lastName = "androsor99";
-		var email = "androsor99@gmail.com";
-		var mobileNumber = "3291406808";
-		var gender = "Male";
-		var hobby = "Sports";
-		var day = "04";
-		var month = "January";
-		var year = "1978";
-		var subject1 = "English";
-		var subject2 = "Physics";
-		var currentAddress = "Skrypnikova 21-120";
+		var firstName = DataUtils.generateRandomFirstName();
+		var lastName = DataUtils.generateRandomLastName();
+		var email = DataUtils.generateRandomEmail();
+		var mobileNumber = DataUtils.generateRandomPhone();
+		var gender = DataUtils.generateRandomGender();
+		var hobby = DataUtils.generateRandomHobby();
+		var day = DataUtils.generateRandomDay();
+		var month = DataUtils.generateRandomMonth();
+		var year = DataUtils.generateRandomYear();
+		var subject1 = DataUtils.generateRandomSubject();
+		var subject2 = DataUtils.generateAnotherSubject(subject1);
+		var currentAddress = DataUtils.generateRandomAddress();
+		var state = DataUtils.generateRandomState();
+		var city = DataUtils.generateRandomCity(state);
 		var nameFile = "Img.jpg";
-		var state = "Haryana";
-		var city = "Karnal";
-		List<String> subjects = List.of(subject1, subject2);
+		var subjects = List.of(subject1, subject2);
 
 		practiceFormPage
 				.openPage()
