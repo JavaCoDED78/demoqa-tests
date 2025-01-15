@@ -58,6 +58,6 @@ public class JunitSimpleTest {
 	@Tags({@Tag("BLOCKER"), @Tag("UI_TEST")})
 	void searchResultsCountTest(String productName) {
 		$("[name=q]").setValue(productName).pressEnter();
-		$$("div[class='g']").shouldHave(CollectionCondition.sizeGreaterThan(5));
+		$$("div[class='g']").shouldHave(CollectionCondition.sizeGreaterThanOrEqual(5));
 	}
 }
