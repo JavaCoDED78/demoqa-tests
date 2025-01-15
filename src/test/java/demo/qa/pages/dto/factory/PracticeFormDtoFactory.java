@@ -19,6 +19,9 @@ import static demo.qa.util.DataUtils.generateRandomYear;
 
 public class PracticeFormDtoFactory implements DtoFactory<PracticeFormDto> {
 
+	private PracticeFormDtoFactory() {
+	}
+
 	@Override
 	public PracticeFormDto create() {
 		PracticeFormDto practiceFormDto = PracticeFormDto.builder()
@@ -40,5 +43,13 @@ public class PracticeFormDtoFactory implements DtoFactory<PracticeFormDto> {
 		practiceFormDto.setSubject2(generateAnotherSubject(practiceFormDto.getSubject1()));
 		practiceFormDto.setCity(generateRandomCity(practiceFormDto.getState()));
 		return practiceFormDto;
+	}
+
+	private static class Holder {
+		private static final PracticeFormDtoFactory INSTANCE = new PracticeFormDtoFactory();
+	}
+
+	public static DtoFactory<PracticeFormDto> getInstance() {
+		return Holder.INSTANCE;
 	}
 }
