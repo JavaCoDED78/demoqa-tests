@@ -50,3 +50,4 @@ bin/
 /.idea/git_toolbox_prj.xml
 /.idea/csv-editor.xml
 /src/test/resources/commonSitUrlShouldBePresentInResultsOfSearchInGoggleByTextQuery.txt
+/.fastRequest/
