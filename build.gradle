@@ -18,6 +18,13 @@ ext {
     assertjVersion = '3.27.2'
 }
 
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.36'
@@ -43,10 +50,6 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
 }
 
-test {
-    useJUnitPlatform(){}
-    systemProperties(System.getProperties())
-}
 allure {
     version = "${allureVersion}"
     report {
@@ -66,13 +69,32 @@ allure {
     }
 }
 
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
 tasks.register('simple_test', Test) {
     useJUnitPlatform {
         includeTags 'simple'
     }
 }
+
 tasks.register('remote_test', Test) {
     useJUnitPlatform {
         includeTags 'remote'
+    }
+}
+
+tasks.register('one_property_test', Test) {
+    useJUnitPlatform {
+        includeTags 'one_property'
     }
 }
